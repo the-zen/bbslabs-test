@@ -20,10 +20,10 @@ Este proyecto es personalizable para adaptarse a tus necesidades. Puedes modific
 ### Tecnologías utilizadas
 Este proyecto utiliza las siguientes tecnologías:
 
-Next.js
-TRPc
-Tailwind CSS
-Prisma ORM
-MySQL - PlanetScale
-OpenAI API
-Stripe API
+- Next.js
+- TRPc
+- Tailwind CSS
+- Prisma ORM
+- MySQL - PlanetScale
+- OpenAI API
+- Stripe API
