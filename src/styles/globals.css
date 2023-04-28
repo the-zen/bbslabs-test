@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*
+    * Base styles
+*/
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+html,
+body {
+    @apply tracking-wide;
+    overflow-x: hidden;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #000;
+}
+
+/*
+    * Scroll
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #131313;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(209, 209, 209);
+}
+
+
+/* 
+    * Selection 
+*/
+::-moz-selection {
+    /* Code for Firefox */
+    color: black;
+    background: white;
+}
+
+::selection {
+    color: black;
+    background: white;
+}
