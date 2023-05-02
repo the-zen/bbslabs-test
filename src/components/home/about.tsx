@@ -1,9 +1,6 @@
 // Types
 import type { FC } from 'react';
 
-// Animations
-import { motion } from 'framer-motion';
-
 // Images
 import Image from 'next/image';
 import AboutImage from '@images/home/about/objective.png';

@@ -12,8 +12,6 @@ import AlgorandLogo from '@images/home/logos/algorand.png';
 import PoligonLogo from '@images/home/logos/poligon.png';
 import VercelLogo from '@images/home/logos/vercel.png';
 
-// Animation
-import { motion } from 'framer-motion';
 
 
 const Partners: FC = ({ }) => {
