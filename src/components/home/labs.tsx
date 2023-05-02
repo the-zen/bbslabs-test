@@ -7,19 +7,20 @@ import { motion } from "framer-motion";
 // Images
 import Image from 'next/image';
 import LabsImage from '@images/home/lab.png';
+
+// Components
 import Divider from './../addOns/Divider';
+
+// Utils
+import Link from 'next/link';
 
 
 
 const Labs: FC = ({ }) => {
     return (
         <>
-            <motion.div
-                className="container px-1 pb-12"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 10 }}
-                transition={{ duration: 2, delay: 0.7 }}
-                viewport={{ once: true }}
+            <div
+                className="container px-1 pb-12 mx-auto"
             >
                 <div className="flex flex-col items-center pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
                     <div className="flex justify-center mb-16">
@@ -27,7 +28,10 @@ const Labs: FC = ({ }) => {
                             Ingresa a nuestros laboratorios y descubre como puedes acelerar tus proyectos
                         </h5>
                     </div>
-                    <div className="flex justify-center items-center mb-10 sm:mb-20">
+                    <Link
+                        href="/labs"
+                        passHref
+                        className="flex justify-center items-center mb-10 sm:mb-20">
                         <button
                             className=" hover:text-[#FFA600] lg:text-xl hover:border-[#FFA600]
                             bg-transparent transition duration-150 ease-in-out 
@@ -36,15 +40,11 @@ const Labs: FC = ({ }) => {
                         >
                             Blockchain Labs
                         </button>
-                    </div>
+                    </Link>
                 </div>
                 <div className="= flex justify-center md:-mt-64 -mt-20 sm:-mt-40">
-                    <motion.div
+                    <div
                         className="w-3/5 sm:w-1/2 h-3/5 sm:h-1/2"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 10 }}
-                        transition={{ duration: 1.5, delay: 0.2 }}
-                        viewport={{ once: true }}
                     >
                         <Image
                             src={LabsImage}
@@ -53,9 +53,9 @@ const Labs: FC = ({ }) => {
                             decoding="async"
                             loading="lazy"
                         />
-                    </motion.div>
+                    </div>
                 </div>
-            </motion.div>
+            </div>
             <Divider />
         </>
     );

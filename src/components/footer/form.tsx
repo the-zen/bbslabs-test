@@ -4,10 +4,17 @@ import { type FC, useRef } from 'react';
 // Animations
 import { motion } from 'framer-motion';
 
+// Server
+import { api } from '~/utils/api';
+import toast from 'react-hot-toast';
+
 
 
 
 const FormComponent: FC = ({ }) => {
+
+    const uploadContactInfo = api.contact.upload.useMutation();
+
     const ref = useRef<HTMLFormElement>(null);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,7 +22,25 @@ const FormComponent: FC = ({ }) => {
         if (!ref.current) return;
         const formData = new FormData(ref.current);
 
-        console.log(formData);
+        const data = {
+            name: formData.get('name') as string,
+            email: formData.get('email') as string,
+            phone: formData.get('phone') as string,
+            message: formData.get('message') as string,
+            TyC: formData.get('TyC') as string == 'on' ? true : false
+        }
+
+        toast.promise(uploadContactInfo.mutateAsync(data), {
+            loading: 'Enviando...',
+            success: 'Tu mensaje ha sido enviado correctamente',
+            error: 'Ocurrió un error al enviar tu mensaje, intenta nuevamente'
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+        .finally(() => {
+            ref.current?.reset();
+        })
     }
 
     return (
@@ -50,7 +75,7 @@ const FormComponent: FC = ({ }) => {
                                     <input
                                         type="tel"
                                         placeholder="Tu teléfono"
-                                        name="tel"
+                                        name="phone"
                                         className="px-3 py-3 w-full placeholder-gray-200 bg-[#00000052] text-gray-100 relative rounded-lg text-sm border border-zinc-300 shadow-md outline-none focus:outline-none focus:border-zinc-700 focus:ring-0 focus:ring-[#ce8a0d]"
                                         required
                                     />
@@ -66,7 +91,7 @@ const FormComponent: FC = ({ }) => {
                                 <div className="mb-3 pt-0 flex">
                                     <input
                                         type="checkbox"
-                                        name="terms"
+                                        name="TyC"
                                         className="my-auto mr-4 rounded shadow-lg h-4 w-4 border-0-gray-300 text-[#ffa600] focus:ring-0 "
                                         required
                                     />

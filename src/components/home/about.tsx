@@ -16,7 +16,7 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 const About: FC = () => {
     return (
         <>
-            <div className="cta_wrapper__YNWOe">
+            <div className="cta_wrapper__YNWOe my-16 md:mt-0">
                 <div className="container mx-auto jsx-499702677 geist-container">
                     <div className="flex flex-col justify-center items-center">
                         <div className="w-[1px] h-24 bg-gradient-to-t from-primary-button to-black"></div>
@@ -28,12 +28,8 @@ const About: FC = () => {
                     >
                         Acerca de nosotros
                     </h5>
-                    <motion.div
+                    <div
                         className="flex flex-col md:flex-row mx-6 mb-12"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 10 }}
-                        transition={{ duration: 4 }}
-                        viewport={{ once: true }}
                     >
                         <div className="w-full mt-8 lg:mt-0 lg:w-5/12 flex flex-col justify-center">
                             <p className="font-normal text-base leading-6 text-gray-200 text-left hover:text-white cursor-pointer">
@@ -50,12 +46,8 @@ const About: FC = () => {
                                 eventos, conferencias y desarrollo de la misma tecnología.
                             </p>
                         </div>
-                        <motion.div
+                        <div
                             className="mx-auto flex justify-center items-center"
-                            initial={{ opacity: 0, x: 300 }}
-                            whileInView={{ opacity: 10, x: 0 }}
-                            transition={{ duration: 1.5, delay: 0.4 }}
-                            viewport={{ once: true }}
                         >
                             <Image
                                 alt="Blockchain Business School About/Objectives"
@@ -66,8 +58,8 @@ const About: FC = () => {
                                 decoding="async"
                                 loading="lazy"
                             />{' '}
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

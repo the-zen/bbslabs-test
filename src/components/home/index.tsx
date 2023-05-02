@@ -12,6 +12,9 @@ import SecondaryGrid from './secondaryGrid';
 import Partners from './partners'
 import Footer from '~/components/footer';
 
+// Animations
+import { motion } from 'framer-motion';
+
 const Home: FC = () => {
 
     const ComponentsArray = [
@@ -32,12 +35,17 @@ const Home: FC = () => {
             {
                 ComponentsArray.map((component, index) => {
                     return (
-                        <section
+                        <motion.section
                             key={index}
                             id={component.name}
+
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 10 }}
+                            transition={{ duration: 1, delay: 0.4 }}
+                            viewport={{ once: true }}
                         >
                             {component.component}
-                        </section>
+                        </motion.section>
                     )
                 })
             }

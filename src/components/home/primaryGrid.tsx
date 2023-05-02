@@ -19,10 +19,12 @@ import Divider from '~/components/addOns/Divider';
 const primaryGrid: FC = ({ }) => {
     return (
         <>
-            <div className="flex justify-center mx-4 mt-24 sm:mt-12 md:mt-6 lg:mt-3 z-50">
+            <div className="flex justify-center mx-8 mt-24 sm:mt-12 md:mt-6 lg:mt-3 z-50">
                 <div className=" announcement-grid-layout_grid__n3Uym announcement-grid-layout_next__6dsT3 container">
                     {/* 1 */}
-                    <Link href="https://www.tlachia.io" passHref target="_blank"
+                    <Link href="https://www.tlachia.io"
+                        passHref
+                        target="_blank"
                         className=" tilt-card_root__5ySPn announcement-grid-layout_featured__PMDpN shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out"
                     >
                         <div className="tag_tag__DS4ok text-white">Beta</div>
@@ -47,7 +49,12 @@ const primaryGrid: FC = ({ }) => {
                         </p>
                     </Link>
                     {/* 2 */}
-                    <div className="announcement-grid-layout_majorFeat0__B5M_T shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out">
+                    <Link
+                        href='/about/dapp'
+                        passHref
+                        target='_blank'
+                        className="announcement-grid-layout_majorFeat0__B5M_T shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out"
+                    >
                         <Image
                             alt="Blockchain Business School Dapp development"
                             src={DappDevImage}
@@ -61,9 +68,14 @@ const primaryGrid: FC = ({ }) => {
                         <p className="text-zinc-400 mt-6 mb-2">
                             We offer solutions for your business, project or idea based on blockchain.
                         </p>
-                    </div>
+                    </Link>
                     {/* 3 */}
-                    <div className="announcement-grid-layout_minorFeat0__6eAtI shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out">
+                    <Link
+                        href='/about/stats'
+                        passHref
+                        target='_blank'
+                        className="announcement-grid-layout_minorFeat0__6eAtI shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out"
+                    >
                         <h4 className="text-white text-2xl font-semibold">Blockchain statistics</h4>
                         <p className="text-zinc-400 mt-6 mb-6">
                             Use blockchain to track and trace your products, services, and assets.
@@ -77,9 +89,14 @@ const primaryGrid: FC = ({ }) => {
                             decoding="async"
                             loading="lazy"
                         />
-                    </div>
+                    </Link>
                     {/* 4 */}
-                    <div className="announcement-grid-layout_minorFeat1__Px61F shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out">
+                    <Link
+                        href='/about/web3'
+                        passHref
+                        target='_blank'
+                        className="announcement-grid-layout_minorFeat1__Px61F shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out"
+                    >
                         <h4 className="text-white text-4xl mt-6 ">Web3</h4>
                         <p className="text-zinc-400 mt-6 mb-2">
                             Decentralized applications, smart contracts, NFTs, DAOs, DeFi, and primaryGrid.
@@ -95,9 +112,14 @@ const primaryGrid: FC = ({ }) => {
                                 loading="lazy"
                             />
                         </div>
-                    </div>
+                    </Link>
                     {/* 5 */}
-                    <div className="announcement-grid-layout_majorFeat1__o4ijj shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out">
+                    <Link
+                        href='/about/consulting'
+                        passHref
+                        target='_blank'
+                        className="announcement-grid-layout_majorFeat1__o4ijj shadow-inner bg-black hover:bg-zinc-900 transition-colors duration-300 cursor-pointer ease-in-out"
+                    >
                         <Image
                             alt="Blockchain Business School Build's New Things"
                             src={BulbImage}
@@ -109,10 +131,10 @@ const primaryGrid: FC = ({ }) => {
                         />
                         <h4 className="text-white text-2xl font-semibold">Build new things</h4>
                         <p className="text-zinc-400 mt-6 mb-2">
-                            Build with the latest tools and technologies. We are always looking for new ways to create
-                            web3.
+                            You have an idea, we have the tools to make it happen.
+                            Use our AI to find the best solution for your business.
                         </p>
-                    </div>
+                    </Link>
                 </div>
             </div>
             <Divider />

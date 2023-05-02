@@ -1,5 +1,5 @@
 // Types
-import {type FC, useRef } from 'react';
+import { type FC, useRef } from 'react';
 
 // Animations
 import { motion } from 'framer-motion';
@@ -7,23 +7,47 @@ import { motion } from 'framer-motion';
 // Icons
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
+// Utils
+import toast from 'react-hot-toast';
+
+// Server
+import { api } from '~/utils/api';
 
 const Newsletter: FC = ({ }) => {
 
     const ref = useRef<HTMLFormElement>(null);
+
+    const newsletterSubscription = api.newsletter.subscribe.useMutation();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!ref.current) return;
         const formData = new FormData(ref.current);
 
-        console.log(formData);
+        const email = formData.get('email') as string;
+
+        toast.promise(newsletterSubscription.mutateAsync({ email }), {
+            loading: 'Enviando...',
+            success: 'Te has suscrito correctamente',
+            error: 'Ocurrió un error al suscribirte, intenta nuevamente'
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+        .finally(() => {
+            ref.current?.reset();
+        })
+
+        if(newsletterSubscription.error?.message == 'Email already subscribed') {
+            toast.error('Este email ya se encuentra suscrito')
+        }
+        
     }
-    
+
 
     return (
         <>
-            <div className="geist-wrapper">
+            <div className="geist-wrapper my-24">
                 <div className="cta_wrapper__YNWOe mx-auto my-16">
                     {/* Text */}
                     <div className="mx-auto mt-8 md:my-6">

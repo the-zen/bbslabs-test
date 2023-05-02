@@ -11,9 +11,8 @@ import { motion } from 'framer-motion';
 
 
 const map: FC = () => {
-        return (
-            <>
-             <>
+  return (
+    <>
       <div className="xl:px-20 px-6 py-20 xl:mx-auto xl:container sm:-mt-12 lg:mb-56 xl:mb-32">
         <div className="md:mt-14 mt-4 relative sm:flex items-center justify-center">
           <div className="w-full xl:h-full h-96 object-cover sm:block hidden">
@@ -67,7 +66,6 @@ const map: FC = () => {
         </div>
       </div>
     </>
-            </>
-        );
+  );
 }
 export default map;

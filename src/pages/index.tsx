@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           content="Empresa dedicada a la incubación y aceleración de proyectos basados en blockchain"
         />
         <link rel="icon" href="/favicon.ico" />
-      </Head>{' '}
+      </Head>
       
       <HomeComponent />
     </>
