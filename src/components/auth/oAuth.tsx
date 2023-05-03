@@ -9,7 +9,7 @@ const oAuth: FC = ({ }) => {
     return (
         <>
             <div>
-                <div className="relative mt-10">
+                <div className="relative mt-10 hidden sm:block">
                     <div className="inset-0 flex items-center" aria-hidden="true">
                         <div className="w-full border-t border-white" />
                     </div>

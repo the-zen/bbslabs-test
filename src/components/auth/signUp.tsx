@@ -68,7 +68,7 @@ const SignUp: FC = ({ }) => {
     <>
       <>
         {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
-        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+        <form className="space-y-2 sm:space-y-6" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium leading-6 text-white">
               Name

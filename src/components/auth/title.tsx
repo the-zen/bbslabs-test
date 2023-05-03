@@ -17,7 +17,7 @@ const Title: FC = ({ }) => {
         <>
             {
                 router.pathname === '/auth/login' && (
-                    <div className="sm:mx-auto sm:w-full sm:max-w-md mb-8 text-white">
+                    <div className="sm:mx-auto sm:w-full sm:max-w-md mb-4 sm:mb-8 text-white">
                         <Image className="mx-auto" src={CompleteLogoImage} width={200} height={65} alt={''} />
                         <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight">
                             Sign in to your account
@@ -34,7 +34,7 @@ const Title: FC = ({ }) => {
 
             {
                 router.pathname === '/auth/register' && (
-                    <div className="sm:mx-auto sm:w-full sm:max-w-md mb-8 text-white">
+                    <div className="sm:mx-auto sm:w-full sm:max-w-md mb-4 sm:mb-8 text-white">
                         <Image className="mx-auto" src={CompleteLogoImage} width={200} height={65} alt={''} />
                         <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight">
                             Register for an account
