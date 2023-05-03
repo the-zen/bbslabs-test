@@ -1,4 +1,3 @@
-import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
 import {
@@ -6,7 +5,7 @@ import {
   publicProcedure,
 } from "~/server/api/trpc";
 
-export const contact = createTRPCRouter({
+export const useContact = createTRPCRouter({
     upload: publicProcedure
     .input(z.object({
         name: z.string(),

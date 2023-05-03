@@ -1,6 +1,7 @@
 import { createTRPCRouter } from "~/server/api/trpc";
-import { newsletter } from "~/server/api/routers/newsletter";
-import { contact } from "~/server/api/routers/contact";
+import { useNewsletter } from "~/server/api/routers/newsletter";
+import { useContact } from "~/server/api/routers/contact";
+import { useCustomAuth } from './routers/customAuth';
 
 /**
  * This is the primary router for your server.
@@ -8,8 +9,9 @@ import { contact } from "~/server/api/routers/contact";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  newsletter,
-  contact
+  useNewsletter,
+  useContact,
+  useCustomAuth
 });
 
 // export type definition of API

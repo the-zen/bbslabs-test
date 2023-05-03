@@ -17,7 +17,7 @@ const Newsletter: FC = ({ }) => {
 
     const ref = useRef<HTMLFormElement>(null);
 
-    const newsletterSubscription = api.newsletter.subscribe.useMutation();
+    const newsletterSubscription = api.useNewsletter.subscribe.useMutation();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

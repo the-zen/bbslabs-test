@@ -5,8 +5,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 
 // Components
-import HomeComponent from '~/components/home'
-
+import HomeComponent from '~/components/home';
 
 const Home: NextPage = () => {
 

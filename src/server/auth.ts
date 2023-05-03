@@ -18,6 +18,13 @@ const loginSchema = z.object({
   password: z.string().min(6),
 });
 
+type ProfileType = {
+  sub: string;
+  name: string;
+  email: string;
+  picture: string;
+}
+
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
  * object and keep type safety.
@@ -29,14 +36,13 @@ declare module "next-auth" {
     user: {
       id: string;
       // ...other properties
-      // role: UserRole;
+      isAdmin: boolean;
     } & DefaultSession["user"];
   }
 
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
+  interface User {
+    isAdmin: boolean;
+  }
 }
 
 /**
@@ -46,13 +52,23 @@ declare module "next-auth" {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-      },
-    }),
+    jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.isAdmin = user.isAdmin;
+      }
+      return token;
+    },
+    session({ session, token, user }) {
+      if (token.id && session.user) {
+        session.user.id = token.id as string;
+        session.user.isAdmin = token.isAdmin as boolean;
+      }
+      if (session.user && user) {
+        session.user.id = user.id;
+      }
+      return session;
+    },
   },
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -60,12 +76,13 @@ export const authOptions: NextAuthOptions = {
       name: "google",
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
-      profile(profile) {
+      profile(profile:ProfileType) { 
         return {
           id: profile.sub,
           name: profile.name,
           email: profile.email,
           image: profile.picture,
+          isAdmin: false,
         };
       },
     }),
@@ -91,7 +108,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         if (user.password && user.id) {
-          const isValidPassword = await verify(user.password as string, cred.password);
+          const isValidPassword = await verify(user.password, cred.password);
 
           if (!isValidPassword) {
             return null;
@@ -102,6 +119,7 @@ export const authOptions: NextAuthOptions = {
             email: user.email,
             user: user.id,
             name: user.name,
+            isAdmin: false,
           };
         } else {
           return null;
@@ -110,12 +128,12 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   secret: env.NEXTAUTH_SECRET,
-  // pages: {
-  //   signIn: "/auth/login",
-  //   error: "/",
-  // },
+  pages: {
+    signIn: "/auth/login",
+    error: "/",
+  },
   session: { strategy: "jwt" },
-  debug: true
+  // debug: true
 };
 
 /**

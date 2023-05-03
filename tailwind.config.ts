@@ -7,6 +7,8 @@ export default {
       colors: {
         'primary-button': '#ffa600',
         'primary-button-hover': '#E29D36',
+        'primary': '#ffa600',
+        'primary-hover': '#E29D36',
       },
     },
   },

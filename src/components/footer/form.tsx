@@ -13,7 +13,7 @@ import toast from 'react-hot-toast';
 
 const FormComponent: FC = ({ }) => {
 
-    const uploadContactInfo = api.contact.upload.useMutation();
+    const uploadContactInfo = api.useContact.upload.useMutation();
 
     const ref = useRef<HTMLFormElement>(null);
 
