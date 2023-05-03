@@ -24,7 +24,7 @@ const SignIn: FC = ({ }) => {
   });
   type FormObjectValidation = z.infer<typeof formObjectValidation>;
 
-  const { register, handleSubmit, formState: { errors } } = useForm<FormObjectValidation>({
+  const { register, handleSubmit, /*formState: { errors }*/ } = useForm<FormObjectValidation>({
     resolver: zodResolver(formObjectValidation),
   });
   const onSubmit: SubmitHandler<FormObjectValidation> = (data) => {
