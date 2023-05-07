@@ -2,9 +2,14 @@ import { type AppType } from "next/app";
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 
+
 import { api } from "~/utils/api";
 
+// Utils
 import { Toaster } from "react-hot-toast";
+
+// Components
+import Navbar from '~/components/nav'
 
 // Styles
 import '~/styles/globals.css'
@@ -24,6 +29,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 
           },
         }} />
+      <Navbar />
       <Component {...pageProps} />
     </SessionProvider>
   );

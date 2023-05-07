@@ -18,8 +18,8 @@ const map: FC = () => {
           <div className="w-full xl:h-full h-96 object-cover sm:block hidden">
             <Image src={CompleteMap} alt="Complete map" draggable={false} />
           </div>
-          <div className="sm:hidden -mt-10 block w-full h-96 object-cover  absolute z-0">
-            <Image src={HalfMap} alt="Half map" draggable={false} layout="fill" />
+          <div className="sm:hidden -mt-10 block w-full h-96 object-cover absolute z-0">
+            <Image src={HalfMap} alt="Half map" draggable={false} />
           </div>
           <motion.div
             initial={{ y: 200, opacity: 0 }}

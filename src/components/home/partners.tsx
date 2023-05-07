@@ -39,8 +39,7 @@ const Partners: FC = ({ }) => {
                             </div>
                         </div>
                         <div className="w-6/12 xl:w-1/4 lg:w-1/4 md:w-1/4 flex justify-center  px-2 py-8">
-                            <Image src={EtherfuseLogo} alt="etherfuse" width={130} height={130} draggable={false} layout="fixed"
-                            />
+                            <Image src={EtherfuseLogo} alt="etherfuse" width={130} height={130} draggable={false}/>
                         </div>
                         <div className="w-6/12 xl:w-1/4 lg:w-1/4 md:w-1/4 flex justify-center  px-2 py-8">
                             <Image src={EthereumLogo} alt="etherfuse" width={130} height={130} draggable={false} />
