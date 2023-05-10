@@ -21,7 +21,7 @@ const secondaryGrid: FC = ({ }) => {
                         href="/labs/learning"
                         passHref
                         target="_blank"
-                        className="announcement-grid-layout_majorFeat0__B5M_T hover:bg-zinc-900 transition-colors duration-200 cursor-pointer"
+                        className="announcement-grid-layout_majorFeat0__B5M_T bg-black hover:bg-zinc-900 transition-colors duration-200 cursor-pointer"
                     >
                         <Image
                             alt="Blockchain Business School Courses"
@@ -42,7 +42,7 @@ const secondaryGrid: FC = ({ }) => {
                         href="/blog"
                         passHref
                         target="_blank"
-                        className="announcement-grid-layout_minorFeat1__Px61F hover:bg-zinc-900 transition-colors duration-200  cursor-pointer"
+                        className="announcement-grid-layout_minorFeat1__Px61F bg-black hover:bg-zinc-900 transition-colors duration-200  cursor-pointer"
                     >
                         <div className="tag_tag__DS4ok">Beta</div>
                         <h4 className="text-white text-2xl font-semibold">Web3 blog</h4>
@@ -64,7 +64,7 @@ const secondaryGrid: FC = ({ }) => {
                         href="/events"
                         passHref
                         target="_blank"
-                        className="announcement-grid-layout_minorFeat0__6eAtI hover:bg-zinc-900 transition-colors duration-200  cursor-pointer"
+                        className="announcement-grid-layout_minorFeat0__6eAtI bg-black hover:bg-zinc-900 transition-colors duration-200  cursor-pointer"
                     >
                         <h4 className="text-white text-2xl font-semibold">Events and conferences</h4>
                         <p className="text-zinc-400 mt-6 mb-2">
@@ -85,7 +85,7 @@ const secondaryGrid: FC = ({ }) => {
                         href="/projects"
                         passHref
                         target="_blank"
-                        className="announcement-grid-layout_majorFeat1__o4ijj hover:bg-zinc-900 transition-colors duration-200  cursor-pointer"
+                        className="announcement-grid-layout_majorFeat1__o4ijj bg-black hover:bg-zinc-900 transition-colors duration-200  cursor-pointer"
                     >
                         <Image
                             src={FolderImage}
@@ -106,7 +106,7 @@ const secondaryGrid: FC = ({ }) => {
                         href="/labs"
                         passHref
                         target="_blank"
-                        className="tilt-card_root__5ySPn announcement-grid-layout_featured__PMDpN hover:bg-zinc-900 transition-colors duration-200 cursor-pointer"
+                        className="tilt-card_root__5ySPn announcement-grid-layout_featured__PMDpN bg-black hover:bg-zinc-900 transition-colors duration-200 cursor-pointer"
                     >
                         <div className="relative mb-16 -ml-4">
                             <div className="bg-zinc-300 h-48 w-48 z-40 blur-3xl opacity-60 absolute -ml-10"></div>
