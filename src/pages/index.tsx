@@ -5,10 +5,9 @@ import { type NextPage } from "next";
 import Head from "next/head";
 
 // Components
-import HomeComponent from '~/components/home';
+import HomeComponent from "~/components/home";
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Head>
@@ -20,7 +19,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <HomeComponent />
     </>
   );

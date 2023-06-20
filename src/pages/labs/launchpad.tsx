@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 
-const Learning: NextPage = () => {
+const Launchpad: NextPage = () => {
   return (
     <>
     </>
   )
 }
 
-export default Learning
+export default Launchpad

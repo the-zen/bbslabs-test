@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 
-const Inncubation: NextPage = () => {
+const Incubation: NextPage = () => {
   return (
     <>
+      <p>Hi</p>
     </>
-  )
-}
+  );
+};
 
-export default Inncubation
+export default Incubation;

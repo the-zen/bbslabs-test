@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 
-const Consulting: NextPage = () => {
+const Mint: NextPage = () => {
   return (
     <>
     </>
   )
 }
 
-export default Consulting
+export default Mint

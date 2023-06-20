@@ -21,17 +21,13 @@
       "~/*": ["./src/*"],
       "@pages/*": ["./src/pages/*"],
       "@components/*": ["./src/components/*"],
+      "@ui/*": ["./src/components/ui/*"],
       "@styles/*": ["./src/styles/*"],
       "@public/*": ["./public/*"],
       "@lib/*": ["./src/lib/*"],
       "@utils/*": ["./src/utils/*"],
-      "@addOns/*": ["src/threejs/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@secure/*": ["./src/secure/*"],
-      "@data/*": ["./src/data/*"],
-      "@assets/*": ["./src/assets/*"],
       "@images/*": ["./public/images/*"],
-      "@json/*": ["./src/json/*"],
     }
   },
   "include": [
